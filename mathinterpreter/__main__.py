@@ -1,6 +1,6 @@
-from interpreter import Interpreter
-from lexer import Lexer
-from parser_ import Parser
+from mathinterpreter.interpreter import Interpreter
+from mathinterpreter.lexer import Lexer
+from mathinterpreter.parser_ import Parser
 
 
 def main():
