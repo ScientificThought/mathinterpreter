@@ -11,3 +11,8 @@ dev = [
     "ipython", 
     "pytest",
     ]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
