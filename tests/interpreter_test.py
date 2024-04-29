@@ -1,28 +1,28 @@
-import unittest
-from nodes import *
-from interpreter import Interpreter
-from values import Number
+import pytest
+from mathinterpreter.nodes import *
+from mathinterpreter.interpreter import Interpreter
+from mathinterpreter.values import Number
 
-class TestInterpreter(unittest.TestCase):
+class TestInterpreter():
 
 	def test_numbers(self):
 		value = Interpreter().visit(NumberNode(51.2))
-		self.assertEqual(value, Number(51.2))
+		assert value == Number(51.2)
 
 	def test_single_operations(self):
 		result = Interpreter().visit(AddNode(NumberNode(27), NumberNode(14)))
-		self.assertEqual(result.value, 41)
+		assert result.value == 41
 
 		result = Interpreter().visit(SubtractNode(NumberNode(27), NumberNode(14)))
-		self.assertEqual(result.value, 13)
+		assert result.value == 13
 
 		result = Interpreter().visit(MultiplyNode(NumberNode(27), NumberNode(14)))
-		self.assertEqual(result.value, 378)
+		assert result.value == 378
 
 		result = Interpreter().visit(DivideNode(NumberNode(27), NumberNode(14)))
-		self.assertAlmostEqual(result.value, 1.92857, 5)
+		pytest.approx(result.value, 1.92857, 5)
 
-		with self.assertRaises(Exception):
+		with pytest.raises(Exception):
 			Interpreter().visit(DivideNode(NumberNode(27), NumberNode(0)))
 			
 	def test_full_expression(self):
@@ -41,4 +41,4 @@ class TestInterpreter(unittest.TestCase):
 		)
 
 		result = Interpreter().visit(tree)
-		self.assertAlmostEqual(result.value, -2360.08, 2)
+		pytest.approx(result.value, -2360.08, 2)
