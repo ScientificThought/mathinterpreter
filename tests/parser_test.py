@@ -1,19 +1,19 @@
-import unittest
-from tokens import Token, TokenType
-from parser_ import Parser
-from nodes import *
+import pytest
+from mathinterpreter.tokens import Token, TokenType
+from mathinterpreter.parser_ import Parser
+from mathinterpreter.nodes import *
 
-class TestParser(unittest.TestCase):
+class TestParser():
 
 	def test_empty(self):
 		tokens = []
 		node = Parser(tokens).parse()
-		self.assertEqual(node, None)
+		assert node == None
 
 	def test_numbers(self):
 		tokens = [Token(TokenType.NUMBER, 51.2)]
 		node = Parser(tokens).parse()
-		self.assertEqual(node, NumberNode(51.2))
+		assert node == NumberNode(51.2)
 
 	def test_single_operations(self):
 		tokens = [
@@ -23,7 +23,7 @@ class TestParser(unittest.TestCase):
 		]
 
 		node = Parser(tokens).parse()
-		self.assertEqual(node, AddNode(NumberNode(27), NumberNode(14)))
+		assert node == AddNode(NumberNode(27), NumberNode(14))
 		
 		tokens = [
 			Token(TokenType.NUMBER, 27),
@@ -32,7 +32,7 @@ class TestParser(unittest.TestCase):
 		]
 
 		node = Parser(tokens).parse()
-		self.assertEqual(node, SubtractNode(NumberNode(27), NumberNode(14)))
+		assert node == SubtractNode(NumberNode(27), NumberNode(14))
 			
 		tokens = [
 			Token(TokenType.NUMBER, 27),
@@ -41,7 +41,7 @@ class TestParser(unittest.TestCase):
 		]
 
 		node = Parser(tokens).parse()
-		self.assertEqual(node, MultiplyNode(NumberNode(27), NumberNode(14)))
+		assert node == MultiplyNode(NumberNode(27), NumberNode(14))
 			
 		tokens = [
 			Token(TokenType.NUMBER, 27),
@@ -50,7 +50,7 @@ class TestParser(unittest.TestCase):
 		]
 
 		node = Parser(tokens).parse()
-		self.assertEqual(node, DivideNode(NumberNode(27), NumberNode(14)))
+		assert node == DivideNode(NumberNode(27), NumberNode(14))
 
 	def test_full_expression(self):
 		tokens = [
@@ -68,7 +68,7 @@ class TestParser(unittest.TestCase):
 		]
 
 		node = Parser(tokens).parse()
-		self.assertEqual(node, AddNode(
+		assert node == AddNode(
 			NumberNode(27),
 			MultiplyNode(
 				SubtractNode(
@@ -80,4 +80,4 @@ class TestParser(unittest.TestCase):
 				),
 				NumberNode(51)
 			)
-		))
+		)
