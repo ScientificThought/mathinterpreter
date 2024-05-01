@@ -1,8 +1,8 @@
 # Python - Math Interpreter
 
-An interpreter, written from scratch in Python, that can evaluate simple math calculations. This project is based on  [py-simple-math-interpreter](https://github.com/davidcallanan/py-simple-math-interpreter), by David Callanan and illustrates the use of software engineering techniques to evolve a prototype code into a  professional software. 
+An interpreter, written from scratch in Python, that can evaluate simple math calculations, with a simple Read-Eval-Print-Loop (REPL) command line interface. This project is based on  [py-simple-math-interpreter](https://github.com/davidcallanan/py-simple-math-interpreter), by David Callanan and illustrates the use of software engineering techniques to evolve a prototype code into a professional software. 
 
-Since our objective is to create an education/professional example we don't change the original business logic, *i.e.*, the interpretor code is not changed and is kept with only addition, subtraction, multiplication, and division operations, as well as right and left parenthesis.
+Since our objective is to create an education/professional example we didn't change the original business logic, *i.e.*, the interpretor code is not changed and is kept with only addition, subtraction, multiplication, and division operations, as well as right and left parenthesis.
 
 ## How to install and run the REPL
 
