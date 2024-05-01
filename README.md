@@ -82,6 +82,10 @@ Please check it out the issues, but we aim to implement:
 - create a documentation;
 - test the documentation using doctests;
 
+## Want to contribute
+
+Checkout our [contributing guide](doc/guides/contributing.md).
+
 ## Who we are?
 
 We [Marco Barbosa](@aureliobarbosa) and [Henrique Guidi](@hsguidi), we both did PhD in Physics at University of São Paulo. ScientificThoughts was created as an online place to develop interesting projects while improving our software engineering techniques.
