@@ -1,6 +1,6 @@
 import pytest
 from mathinterpreter.tokens import Token, TokenType
-from mathinterpreter.parser_ import Parser
+from mathinterpreter.parser import Parser
 from mathinterpreter.nodes import *
 
 class TestParser():
