@@ -38,19 +38,15 @@ Note that the branch name doesn't need to be so much special as you are possibly
 As recommended by Test-Driven Development, if you are proposing a new feature or fixing a previously unnoticed bug your first step will be to create a new test, which will fail at first and pass after your fix.
 Remember to call `pytest` in the terminal to check whether tests are passing or failing after each effective change.
 
-#TODO: talk adding to the stage area.
-
-All files
+After doing your changes add your work to the git stagging area. If you worked on single file or in many files and want to include all of them in your commit, go to the project root directory and type:
 ```bash
 git add .
 ```
-
-Single File
+In case you made many changes but want to only changes in a single file to the commit, specify it using:
 ```bash
 git add address/to/changed_file.py
 ```
-
-#TODO: talk about your commit
+Now, commit your changes with a reasonble message. Do not forget to mention the issue your are solving, which is numbered `xyz` in the example below:
 ```bash
 git commit -m "Fix problematic issue #xyz"
 ```
