@@ -7,12 +7,11 @@ name = "mathinterpreter"
 version = "0.1"
 
 [project.optional-dependencies]
-dev = [
-    "ipython", 
-    "pytest",
-    ]
+dev = ["ipython", "pytest", "black"]
 
 [tool.pytest.ini_options]
-addopts = [
-    "--import-mode=importlib",
-]
+addopts = ["--import-mode=importlib"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310', 'py311', 'py312']
