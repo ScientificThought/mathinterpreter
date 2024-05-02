@@ -29,7 +29,7 @@ You can now find any or many issue of your interest, proposed a new features (bu
 
 ### Creating branches, addint code to stage and commiting
 
-Choose an adequate name for this branch, reflecting the changes you are going to make, *e.g.* `fix_problematic_issue`, and create a branch:
+Choose an adequate name for this branch, reflecting the cha[nges you are going to make, *e.g.* `fix_problematic_issue`, and create a branch:](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
 ```bash
 git branch fix_problematic_issue
 ```
@@ -38,19 +38,15 @@ Note that the branch name doesn't need to be so much special as you are possibly
 As recommended by Test-Driven Development, if you are proposing a new feature or fixing a previously unnoticed bug your first step will be to create a new test, which will fail at first and pass after your fix.
 Remember to call `pytest` in the terminal to check whether tests are passing or failing after each effective change.
 
-#TODO: talk adding to the stage area.
-
-All files
+After doing your changes add your work to the git stagging area. If you worked on single file or in many files and want to include all of them in your commit, go to the project root directory and type:
 ```bash
 git add .
 ```
-
-Single File
+In case you made many changes but want to only changes in a single file to the commit, specify it using:
 ```bash
 git add address/to/changed_file.py
 ```
-
-#TODO: talk about your commit
+Now, commit your changes with a reasonble message. Do not forget to mention the issue your are solving, which is numbered `xyz` in the example below:
 ```bash
 git commit -m "Fix problematic issue #xyz"
 ```
@@ -76,14 +72,26 @@ That is what I explain in the next section.
 
 ### Updating a branch to reflect changes in remote repository
 
-#TODO: WRITE.
+Suppose someone update the remote repository and  you are no longer up-to-date with the contents implemented there and you want to incorporate those changes in your branch. It could be either your development branch or 
+your main branch. What do you do? A good place to start with is this post from Atlassian about [`git fetch`command](https://www.atlassian.com/git/tutorials/syncing/git-fetch). But in a short explanation, you locally have a copy of the remote repo and you can update this copy by doing a fetch. Next you have to incorporate those changes into your local copy, by doing a merge. The resulting procedure presented next.
+
+To download all remote branchs from the remote server `origin` with a copy on your machine, use:
+```bash
+git fetch origin
+```
+Then you merge those new remote date into your *current branch*, using:
+```bash
+git checkout current_branch
+git merge origin/main
+```
+If there is any merge conflict, git will ask you to resolve that and open up the default editor for you to decide how to fix merge conflict! This is a [little bit more complicated](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/) and I don't have time now to talk about it now. Since this is a very small project, it will possibly not happen here but if it happen I will then change this documentation.
 
 ### Subsequent pushes
 It is common that you after you create your Pull Request you change your mind and decide to take another approach to solve the problem (or suppose you were doing a documentation contribution and just decided to create another sentence to explain bether a certain point). It turn out that in this case you will need to checkout your development branch again, change some code, stage and commit those changes.
 
 The same should happen if a reviewer asks to make those changes. If you did what we asked you to do before you would be now on the `main` branch and will need to checkout again in your development branch, using:
 ```bash
-git checkout fix_problematic_issue
+git checkout <fix_problematic_issue>
 ```
 Then you fix your code and commit and push again:
 ```bash
@@ -96,7 +104,13 @@ will be part of the PR you asked before.
 
 # Deleting remote and local branchs (after a PR is merged, for example)
 
-#TODO: WRITE.
+After you do your work and everything is incorporated into the project online, i.e., your PR were accepted, you may want to clean your local environment by deleting the branchs of the PR. This is particularly important if you make a few PR per day, in a week of work you can be loaded with about fifteen branchs. On large projects this is important to avoid disk usage (maybe someone just put some big data file or a video there by mistake without properly configuring git), but it is also important on small project to reduce cognitive overhead. 
+
+In this case what you do is to delete those branches. To do it locally, move outside of the branch you want to delete and use:
+```bash
+git branch -d branch_name
+```
+The remote branch can be deleted in a straightforward manner using the GitHub web interface, but you can do it on the terminal too, as described on this blog [post](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/).
 
 
 

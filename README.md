@@ -68,18 +68,18 @@ print(value)
     - package build uses `setuptools`;
 - tests using pytest.
 - a simple simple REPL interface.
+- automated tests using GitHub Actions;
 
 **Current goal is:**
 
 Please check it out the issues, but we aim to implement:
 
-- automated tests using GitHub Actions;
 - linting with black, flake8 or ruff;
 - expand the tests;
 - improve the cli:
     - use argparse so that the user can call the interpreter from shell;
     - make the REPL more user friendly;
-- create a documentation;
+- create documentation using automation tools;
 - test the documentation using doctests;
 
 ## Want to contribute
