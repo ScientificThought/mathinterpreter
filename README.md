@@ -87,8 +87,12 @@ Please check it out the issues, but we aim to implement:
 
 ## Want to contribute
 
-Checkout our [contributing guide](doc/guides/contributing.md).
+Please take a look on our [contributing guide](doc/guides/contributing.md).
 
 ## Who we are?
 
-We [Marco Barbosa](@aureliobarbosa) and [Henrique Guidi](@hsguidi), we both did PhD in Physics at University of São Paulo. ScientificThoughts was created as an online place to develop interesting projects while improving our software engineering techniques.
+We are [Marco Barbosa](@aureliobarbosa) and [Henrique Guidi](@hsguidi), colleagues which got 
+involved with computation while doing PhD in Physics at University of São Paulo. 
+
+ScientificThoughts was created as an online place to develop interesting small projects to improving 
+our software engineering techniques. Want to join us? Just contact us.
