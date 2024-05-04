@@ -14,18 +14,19 @@ class Lexer:
 
     Example:
 
-    lexer = Lexer('1+(4/3)')
-    tokens = lexer.generate_tokens()
-    parser = Parser(tokens)
-    tree = parser.parse()
-    if tree:
-        interpreter = Interpreter()
-        value = interpreter.visit(tree)
-        print(value)
-    else:
-        print("Invalid expression.")
-    """
+        lexer = Lexer('1+(4/3)')
+        tokens = lexer.generate_tokens()
+        parser = Parser(tokens)
+        tree = parser.parse()
+        if tree:
+            interpreter = Interpreter()
+            value = interpreter.visit(tree)
+            print(value)
+        else:
+            print("Invalid expression.")
 
+
+    """
     def __init__(self, text):
         self.text = iter(text)
         self.advance()
