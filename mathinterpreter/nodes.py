@@ -3,6 +3,11 @@ from dataclasses import dataclass
 
 @dataclass
 class NumberNode:
+    """
+    Class for define number nodes.
+    Number nodes have no children node.
+    """
+
     value: any
 
     def __repr__(self):
@@ -11,6 +16,11 @@ class NumberNode:
 
 @dataclass
 class AddNode:
+    """
+    Class for define Add nodes.
+    Add nodes must have 2 children nodes.
+    """
+
     node_a: any
     node_b: any
 
@@ -20,6 +30,11 @@ class AddNode:
 
 @dataclass
 class SubtractNode:
+    """
+    Class for define Subtract nodes.
+    Subtract nodes must have 2 children nodes.
+    """
+
     node_a: any
     node_b: any
 
@@ -29,6 +44,11 @@ class SubtractNode:
 
 @dataclass
 class MultiplyNode:
+    """
+    Class for define Multiply nodes.
+    Multiply nodes must have 2 children nodes.
+    """
+
     node_a: any
     node_b: any
 
@@ -38,6 +58,11 @@ class MultiplyNode:
 
 @dataclass
 class DivideNode:
+    """
+    Class for define Divide nodes.
+    Divide nodes must have 2 children nodes.
+    """
+
     node_a: any
     node_b: any
 
@@ -47,6 +72,11 @@ class DivideNode:
 
 @dataclass
 class PlusNode:
+    """
+    Class for define plus nodes.
+    Plus nodes must have only one child node.
+    """
+
     node: any
 
     def __repr__(self):
@@ -55,6 +85,11 @@ class PlusNode:
 
 @dataclass
 class MinusNode:
+    """
+    Class for define minus nodes.
+    Minus nodes must have only one child node.
+    """
+
     node: any
 
     def __repr__(self):

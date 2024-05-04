@@ -5,6 +5,27 @@ DIGITS = "0123456789"
 
 
 class Lexer:
+    """
+    mathinterpreter's lexer class
+    to generate tokens from mathematical expression in text format.
+
+    Keyword arguments:
+    text -- Mathematical expression (str)
+
+    Example:
+
+    lexer = Lexer('1+(4/3)')
+    tokens = lexer.generate_tokens()
+    parser = Parser(tokens)
+    tree = parser.parse()
+    if tree:
+        interpreter = Interpreter()
+        value = interpreter.visit(tree)
+        print(value)
+    else:
+        print("Invalid expression.")
+    """
+
     def __init__(self, text):
         self.text = iter(text)
         self.advance()
