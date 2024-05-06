@@ -4,6 +4,16 @@ from mathinterpreter.parser import Parser
 
 
 def calculate(text):
+    """
+    mathinterpreter's calculator
+
+    Keyword arguments:
+    text -- Mathematical expression (str)
+
+    Example:
+        mathinterpreter('1+(4/3)')
+
+    """
     try:
         if text.isascii():
             text = text.lower()
@@ -15,8 +25,6 @@ def calculate(text):
             return None
         interpreter = Interpreter()
         value = interpreter.visit(tree)
-        return value
+        return f"{value}"
     except Exception as e:
         print(e)
-
-

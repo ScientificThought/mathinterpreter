@@ -27,6 +27,7 @@ class Lexer:
 
 
     """
+
     def __init__(self, text):
         self.text = iter(text)
         self.advance()
