@@ -71,6 +71,28 @@ class DivideNode:
 
 
 @dataclass
+class PowerNode:
+    """
+    class mathinterpreter.nodes.PowerNode()
+
+    @dataclass for nodes which will evaluate the power operation.
+    If sintactically correct, the resulting operation will be $a^b$,
+    where $a$ is the basis and $b$ is the exponent.
+
+    Properties:
+    -----------
+    node_a: the value of the basis.
+    node_b: the value of the exponent
+    """
+
+    node_a: any
+    node_b: any
+
+    def __repr__(self):
+        return f"({self.node_a}^{self.node_b})"
+
+
+@dataclass
 class PlusNode:
     """
     Class for define plus nodes.
