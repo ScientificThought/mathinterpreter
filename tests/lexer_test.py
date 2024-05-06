@@ -1,6 +1,7 @@
 import pytest
-from mathinterpreter.tokens import Token, TokenType
+
 from mathinterpreter.lexer import Lexer
+from mathinterpreter.tokens import Token, TokenType
 
 
 class TestLexer:
@@ -24,12 +25,13 @@ class TestLexer:
         ]
 
     def test_operators(self):
-        tokens = list(Lexer("+-*/").generate_tokens())
+        tokens = list(Lexer("+-*/^").generate_tokens())
         assert tokens == [
             Token(TokenType.PLUS),
             Token(TokenType.MINUS),
             Token(TokenType.MULTIPLY),
             Token(TokenType.DIVIDE),
+            Token(TokenType.POWER),
         ]
 
     def test_parens(self):
