@@ -75,8 +75,8 @@ class PowerNode:
     """
     class mathinterpreter.nodes.PowerNode()
 
-    @dataclass for nodes which will evaluate the power operation.
-    If sintactically correct, the resulting operation will be $a^b$,
+    @dataclass for nodes evaluating the power operation.
+    If syntactically correct, the resulting operation will be $a^b$,
     where $a$ is the basis and $b$ is the exponent.
 
     Properties:
