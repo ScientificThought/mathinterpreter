@@ -1,6 +1,7 @@
-from mathinterpreter.interpreter import Interpreter
-from mathinterpreter.lexer import Lexer
-from mathinterpreter.parser import Parser
+#from mathinterpreter.interpreter import Interpreter
+#from mathinterpreter.lexer import Lexer
+#from mathinterpreter.parser import Parser
+from mathinterpreter.calculate import calculate
 
 
 def main():
@@ -13,14 +14,7 @@ def main():
                 if text in ["q", "quit"]:
                     break
 
-            lexer = Lexer(text)
-            tokens = lexer.generate_tokens()
-            parser = Parser(tokens)
-            tree = parser.parse()
-            if not tree:
-                continue
-            interpreter = Interpreter()
-            value = interpreter.visit(tree)
+            value = calculate(text)
             print(value)
         except Exception as e:
             print(e)
