@@ -1,7 +1,8 @@
 import pytest
-from mathinterpreter.tokens import Token, TokenType
-from mathinterpreter.parser import Parser
+
 from mathinterpreter.nodes import *
+from mathinterpreter.parser import Parser
+from mathinterpreter.tokens import Token, TokenType
 
 
 class TestParser:
@@ -52,6 +53,15 @@ class TestParser:
 
         node = Parser(tokens).parse()
         assert node == DivideNode(NumberNode(27), NumberNode(14))
+
+        tokens = [
+            Token(TokenType.NUMBER, 3),
+            Token(TokenType.POWER),
+            Token(TokenType.NUMBER, 2),
+        ]
+
+        node = Parser(tokens).parse()
+        assert node == PowerNode(NumberNode(3), NumberNode(2))
 
     def test_full_expression(self):
         tokens = [

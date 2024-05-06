@@ -72,8 +72,12 @@ class Parser:
         while self.current_token != None and self.current_token.type in (
             TokenType.MULTIPLY,
             TokenType.DIVIDE,
+            TokenType.POWER,
         ):
-            if self.current_token.type == TokenType.MULTIPLY:
+            if self.current_token.type == TokenType.POWER:
+                self.advance()
+                result = PowerNode(result, self.factor())
+            elif self.current_token.type == TokenType.MULTIPLY:
                 self.advance()
                 result = MultiplyNode(result, self.factor())
             elif self.current_token.type == TokenType.DIVIDE:

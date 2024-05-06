@@ -1,6 +1,7 @@
 import pytest
-from mathinterpreter.nodes import *
+
 from mathinterpreter.interpreter import Interpreter
+from mathinterpreter.nodes import *
 from mathinterpreter.values import Number
 
 
@@ -19,6 +20,9 @@ class TestInterpreter:
 
         result = Interpreter().visit(MultiplyNode(NumberNode(27), NumberNode(14)))
         assert result.value == 378
+
+        result = Interpreter().visit(PowerNode(NumberNode(2), NumberNode(2)))
+        assert result.value == 4
 
         result = Interpreter().visit(DivideNode(NumberNode(27), NumberNode(14)))
         pytest.approx(result.value, 1.92857, 5)

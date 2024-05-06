@@ -1,5 +1,5 @@
-from enum import Enum
 from dataclasses import dataclass
+from enum import Enum
 
 
 class TokenType(Enum):
@@ -8,8 +8,9 @@ class TokenType(Enum):
     MINUS = 2
     MULTIPLY = 3
     DIVIDE = 4
-    LPAREN = 5
-    RPAREN = 6
+    POWER = 5
+    LPAREN = 6
+    RPAREN = 7
 
 
 @dataclass
