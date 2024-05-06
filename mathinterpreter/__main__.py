@@ -1,29 +1,17 @@
-from mathinterpreter.interpreter import Interpreter
-from mathinterpreter.lexer import Lexer
-from mathinterpreter.parser import Parser
+from mathinterpreter.calculate import calculate
 
 
 def main():
     while True:
-        try:
-            text = input("calc > ").strip()
+        text = input("calc > ").strip()
 
-            if text.isascii():
-                text = text.lower()
-                if text in ["q", "quit"]:
-                    break
+        if text.isascii():
+            text = text.lower()
+            if text in ["q", "quit"]:
+                break
 
-            lexer = Lexer(text)
-            tokens = lexer.generate_tokens()
-            parser = Parser(tokens)
-            tree = parser.parse()
-            if not tree:
-                continue
-            interpreter = Interpreter()
-            value = interpreter.visit(tree)
-            print(value)
-        except Exception as e:
-            print(e)
+        value = calculate(text)
+        print(value)
 
 
 if __name__ == "__main__":
