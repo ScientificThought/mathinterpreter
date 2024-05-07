@@ -57,27 +57,31 @@ For using `mathinterpreter` as a library you will need to import the lexer, the 
 
 ## What we have done and what we are doing
 
-**Current implementation (2024.04.30) includes:**
-- library `mathinterpreter` with it's subpackages;
-- a single `pyproject.toml` to organize project;
-    - installation using `pip`;
-    - package build uses `setuptools`;
-- tests using pytest.
-- a simple simple REPL interface.
-- automated tests using GitHub Actions;
-- format code using with black; with automations on GitHub Actions;
+### Current implementation includes:**
 
-**Current goal is:**
+*Version*: 2024.05.07
+- library `mathinterpreter` (Lexer, Parser, Interpreter, and a `calc()`, to simplify calculations);
+- a simple command line interface, `mathinterpreter`, using a simple REPL;
 
+
+### Project Software Stack
+
+- pip: for package installation frontend;
+- setuptools: for package installation backend;
+- pytest: for unit tests;
+- black: for automatic code formatting;
+- GitHub Action Scripts: for CI Automation;
+
+### Planned improvements
 We track feature requests with issues. But we aim to implement:
 
 - implement code coverage;
 - expand the tests suit;
 - improve the cli:
-    - use `argparse` so that the user can call `calculate` from shell and do useful work without leaving the terminal;
+    - use `argparse` to improve the cli usage, allowing the user to call `mathinterpreter "1+1"`, for example.    
     - make the REPL more user friendly;
 
-## Want to contribute
+## Contributing
 
 Please take a look on our [contributing guide](doc/guides/contributing.md).
 
