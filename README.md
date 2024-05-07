@@ -65,13 +65,12 @@ For using `mathinterpreter` as a library you will need to import the lexer, the 
 - tests using pytest.
 - a simple simple REPL interface.
 - automated tests using GitHub Actions;
-- format code using with black;
+- format code using with black; with automations on GitHub Actions;
 
 **Current goal is:**
 
-Please check it out the issues, but we aim to implement:
+We track feature requests with issues. But we aim to implement:
 
-- add CI automation for black code formatter;
 - implement code coverage;
 - expand the tests suit;
 - improve the cli:
