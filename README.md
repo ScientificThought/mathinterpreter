@@ -34,33 +34,26 @@ python mathinterpreter
 
 This will open the REPL terminal of the  interpreter and you can it for typing math formula as follows:
 ```
-❯ python mathinterpreter
+$ python mathinterpreter
 calc > 1+1        
 2.0
 calc > (3.0+2*2)/3
 2.3333333333333335
-calc > 
+calc > q
+$ 
 ```
-Jus type `q` or `quit` followed by enter  in the REPL to return to your shell. That's it.
+Just type `q` or `quit` followed by enter  in the REPL to return to your shell. That's it.
 
 ### How to use this package as Python module
 
-For using the `mathinterpreter` as a library you will need to import the lexer, the parser, and the interpreter objects. For understanding how to and interpreter works it is recommended to look onto the file `matheinterpreter/__main__.py`, in which REPL is implemented. But the code below presents an snippet of how simple  and 'play' with technics for building and interpreter.
-
+You can call `mathinterpreter` from your python code and use the function `calculate` to evaluate expressions, as in the following:
 ```python
+from mathinterpreter import calculate
 
-from mathinterpreter.interpreter import Interpreter
-from mathinterpreter.lexer import Lexer
-from mathinterpreter.parser_ import Parser
-
-text = '1 + 3*(5*2+1)/2'
-tokens = Lexer(text).generate_tokens()
-tree = Parser(tokens).parse()
-
-interpreter = Interpreter()
-value = interpreter.visit(tree)
+value = calculate('1 + 3*(5*2+1)/2')
 print(value)
 ```
+For using `mathinterpreter` as a library you will need to import the lexer, the parser, and the interpreter objects. For understanding how to and interpreter works it is recommended to look the files `matheinterpreter/__main__.py` and `matheinterpreter/calculate.py`, which implement the REP.
 
 ## What we have done and what we are doing
 
@@ -72,18 +65,18 @@ print(value)
 - tests using pytest.
 - a simple simple REPL interface.
 - automated tests using GitHub Actions;
+- format code using with black;
 
 **Current goal is:**
 
 Please check it out the issues, but we aim to implement:
 
-- linting with black, flake8 or ruff;
-- expand the tests;
+- add CI automation for black code formatter;
+- implement code coverage;
+- expand the tests suit;
 - improve the cli:
-    - use argparse so that the user can call the interpreter from shell;
+    - use `argparse` so that the user can call `calculate` from shell and do useful work without leaving the terminal;
     - make the REPL more user friendly;
-- create documentation using automation tools;
-- test the documentation using doctests;
 
 ## Want to contribute
 
