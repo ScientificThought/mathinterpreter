@@ -1,4 +1,4 @@
-from mathinterpreter.calculate import calculate
+from mathinterpreter.calculate import calc
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
             if text in ["q", "quit"]:
                 break
 
-        value = calculate(text)
+        value = calc(text)
         print(value)
 
 
