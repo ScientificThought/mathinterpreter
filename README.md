@@ -50,7 +50,7 @@ You can call `mathinterpreter` from your python code and use the function `calcu
 ```python
 from mathinterpreter import calculate
 
-value = calculate('1 + 3*(5*2+1)/2')
+value = calc('1 + 3*(5*2+1)/2')
 print(value)
 ```
 For using `mathinterpreter` as a library you will need to import the lexer, the parser, and the interpreter objects. For understanding how to and interpreter works it is recommended to look the files `matheinterpreter/__main__.py` and `matheinterpreter/calculate.py`, which implement the REP.
