@@ -48,12 +48,12 @@ Just type `q` or `quit` followed by enter  in the REPL to return to your shell. 
 
 You can call `mathinterpreter` from your python code and use the function `calculate` to evaluate expressions, as in the following:
 ```python
-from mathinterpreter import calculate
+from mathinterpreter import calc
 
-value = calculate('1 + 3*(5*2+1)/2')
+value = calc('1 + 3*(5*2+1)/2')
 print(value)
 ```
-For using `mathinterpreter` as a library you will need to import the lexer, the parser, and the interpreter objects. For understanding how to and interpreter works it is recommended to look the files `matheinterpreter/__main__.py` and `matheinterpreter/calculate.py`, which implement the REP.
+For using `mathinterpreter` as a library you will need to import the lexer, the parser, and the interpreter objects. For understanding how to and interpreter works it is recommended to look the files `mathinterpreter/__main__.py` and `mathinterpreter/calculate.py`, which implement the REP.
 
 ## What we have done and what we are doing
 
