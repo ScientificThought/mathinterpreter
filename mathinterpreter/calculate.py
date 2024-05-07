@@ -3,7 +3,7 @@ from mathinterpreter.lexer import Lexer
 from mathinterpreter.parser import Parser
 
 
-def calculate(text):
+def calc(text):
     """
     mathinterpreter's calculator
 
