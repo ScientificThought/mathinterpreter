@@ -72,6 +72,7 @@ class Parser:
         while self.current_token != None and self.current_token.type in (
             TokenType.MULTIPLY,
             TokenType.DIVIDE,
+            TokenType.REMAINDE,
             TokenType.POWER,
         ):
             if self.current_token.type == TokenType.POWER:
