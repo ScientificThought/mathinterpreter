@@ -71,6 +71,20 @@ class DivideNode:
 
 
 @dataclass
+class RemaindeNode:
+    """
+    Class for define Divide nodes.
+    Remainde nodes must have 2 children nodes.
+    """
+
+    node_a: any
+    node_b: any
+
+    def __repr__(self):
+        return f"({self.node_a}%{self.node_b})"
+
+
+@dataclass
 class PowerNode:
     """
     class mathinterpreter.nodes.PowerNode()
