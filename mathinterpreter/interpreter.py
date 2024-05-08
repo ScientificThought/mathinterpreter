@@ -48,5 +48,11 @@ class Interpreter:
         except:
             raise Exception("Runtime math error")
 
+    def visit_RemaindeNode(self, node):
+        try:
+            return Number(self.visit(node.node_a).value % self.visit(node.node_b).value)
+        except:
+            raise Exception("Runtime math error")
+
     def visit_PowerNode(self, node):
         return Number(self.visit(node.node_a).value ** self.visit(node.node_b).value)
