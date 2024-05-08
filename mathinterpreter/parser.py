@@ -86,7 +86,7 @@ class Parser:
                 result = DivideNode(result, self.factor())
             elif self.current_token.type == TokenType.REMAINDE:
                 self.advance()
-                result = DivideNode(result, self.factor())
+                result = RemaindeNode(result, self.factor())
 
         return result
 

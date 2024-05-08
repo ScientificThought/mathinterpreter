@@ -63,6 +63,15 @@ class TestParser:
         node = Parser(tokens).parse()
         assert node == PowerNode(NumberNode(3), NumberNode(2))
 
+        tokens = [
+            Token(TokenType.NUMBER, 3),
+            Token(TokenType.REMAINDE),
+            Token(TokenType.NUMBER, 2),
+        ]
+
+        node = Parser(tokens).parse()
+        assert node == RemaindeNode(NumberNode(3), NumberNode(2))
+
     def test_full_expression(self):
         tokens = [
             Token(TokenType.NUMBER, 27),
