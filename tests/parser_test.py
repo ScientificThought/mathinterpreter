@@ -63,6 +63,7 @@ class TestParser:
         node = Parser(tokens).parse()
         assert node == PowerNode(NumberNode(3), NumberNode(2))
 
+    def test_parser_modulo(self):
         tokens = [
             Token(TokenType.NUMBER, 3),
             Token(TokenType.REMAINDE),
