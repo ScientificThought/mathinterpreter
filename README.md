@@ -5,7 +5,7 @@
 
 An interpreter, written from scratch in Python, that can evaluate simple math calculations, with a simple Read-Eval-Print-Loop (REPL) command line interface. This project is based on  [py-simple-math-interpreter](https://github.com/davidcallanan/py-simple-math-interpreter), by David Callanan and illustrates the use of software engineering techniques to evolve a prototype code into a professional software. 
 
-Since our objective is to create an education/professional example we didn't change the original business logic, *i.e.*, we do not change the interpretor code. Besides the four basic operations ( addition, subtraction, multiplication, and division) we implemented the operator `^` to calculate `a^b`.
+Since our objective is to create an education/professional example we didn't change the original business logic, *i.e.*, we do not change the interpretor code. Besides the four basic operations ( addition, subtraction, multiplication, and division) we implemented the power operator `^` to calculate `a^b` and the modulo operator `%`.
 
 ## How to install and run the REPL
 
