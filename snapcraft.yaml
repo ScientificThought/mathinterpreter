@@ -9,14 +9,14 @@ description: |
 
 version: 0.1
 base: core22
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
 
 parts:
   mathinterpreter:
     plugin: python
     source-type: git
-    source: https://github.com/ScientificThought/py-math-interpreter
+    source: https://github.com/ScientificThought/py-math-interpreter/tree/snap_package
 
 apps:
   mathinterpreter:
