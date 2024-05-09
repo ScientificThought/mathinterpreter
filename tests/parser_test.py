@@ -17,61 +17,26 @@ class TestParser:
         node = Parser(tokens).parse()
         assert node == NumberNode(51.2)
 
-    def test_single_operations(self):
+    @pytest.mark.parametrize(
+        "token_operation,num_a,num_b,Node",
+        [
+            (TokenType.PLUS, 27, 14, AddNode),
+            (TokenType.MINUS, 27, 14, SubtractNode),
+            (TokenType.DIVIDE, 27, 14, DivideNode),
+            (TokenType.MULTIPLY, 27, 14, MultiplyNode),
+            (TokenType.POWER, 3, 2, PowerNode),
+            (TokenType.REMAINDE, 3, 2, RemaindeNode),
+        ],
+    )
+    def test_single_operations_new(self, token_operation, num_a, num_b, Node):
         tokens = [
-            Token(TokenType.NUMBER, 27),
-            Token(TokenType.PLUS),
-            Token(TokenType.NUMBER, 14),
+            Token(TokenType.NUMBER, num_a),
+            Token(token_operation),
+            Token(TokenType.NUMBER, num_b),
         ]
 
         node = Parser(tokens).parse()
-        assert node == AddNode(NumberNode(27), NumberNode(14))
-
-        tokens = [
-            Token(TokenType.NUMBER, 27),
-            Token(TokenType.MINUS),
-            Token(TokenType.NUMBER, 14),
-        ]
-
-        node = Parser(tokens).parse()
-        assert node == SubtractNode(NumberNode(27), NumberNode(14))
-
-        tokens = [
-            Token(TokenType.NUMBER, 27),
-            Token(TokenType.MULTIPLY),
-            Token(TokenType.NUMBER, 14),
-        ]
-
-        node = Parser(tokens).parse()
-        assert node == MultiplyNode(NumberNode(27), NumberNode(14))
-
-        tokens = [
-            Token(TokenType.NUMBER, 27),
-            Token(TokenType.DIVIDE),
-            Token(TokenType.NUMBER, 14),
-        ]
-
-        node = Parser(tokens).parse()
-        assert node == DivideNode(NumberNode(27), NumberNode(14))
-
-        tokens = [
-            Token(TokenType.NUMBER, 3),
-            Token(TokenType.POWER),
-            Token(TokenType.NUMBER, 2),
-        ]
-
-        node = Parser(tokens).parse()
-        assert node == PowerNode(NumberNode(3), NumberNode(2))
-
-    def test_parser_modulo(self):
-        tokens = [
-            Token(TokenType.NUMBER, 3),
-            Token(TokenType.REMAINDE),
-            Token(TokenType.NUMBER, 2),
-        ]
-
-        node = Parser(tokens).parse()
-        assert node == RemaindeNode(NumberNode(3), NumberNode(2))
+        assert node == Node(NumberNode(num_a), NumberNode(num_b))
 
     def test_full_expression(self):
         tokens = [
