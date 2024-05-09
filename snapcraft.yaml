@@ -16,7 +16,7 @@ parts:
   mathinterpreter:
     plugin: python
     source-type: git
-    source: https://github.com/ScientificThought/py-math-interpreter/tree/snap_package
+    source: https://github.com/ScientificThought/py-math-interpreter
 
 apps:
   mathinterpreter:
