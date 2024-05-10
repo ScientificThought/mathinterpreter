@@ -1,3 +1,4 @@
+import readline
 from mathinterpreter.calculate import calc
 
 
