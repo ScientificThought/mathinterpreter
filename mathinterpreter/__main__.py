@@ -1,10 +1,16 @@
 import readline
+
 from mathinterpreter.calculate import calc
 
 
 def main():
     while True:
-        text = input("calc > ").strip()
+
+        try:
+            text = input("calc > ")
+        except KeyboardInterrupt:
+            print("\n", KeyboardInterrupt.__doc__)
+            exit()
 
         if text.isascii():
             text = text.lower()
