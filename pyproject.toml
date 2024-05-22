@@ -7,7 +7,7 @@ name = "mathinterpreter"
 version = "0.1"
 
 [project.optional-dependencies]
-dev = ["ipython", "pytest", "black"]
+dev = ["ipython", "pytest", "coverage", "black"]
 
 [project.scripts]
 mathinterpreter = "mathinterpreter.__main__:main"
