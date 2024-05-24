@@ -1,10 +1,21 @@
+import argparse
 import readline
+import sys
 
 from mathinterpreter.calculate import calc
 
 
 def main():
-    while True:
+
+    nargs = len(sys.argv)
+    repl = nargs == 1
+
+    if nargs == 2:
+        text = sys.argv[1]
+        value = calc(text)
+        print(value)
+
+    while repl:
 
         try:
             text = input("calc > ")
