@@ -7,13 +7,9 @@ from mathinterpreter.calculate import calc
 
 def main():
 
-    nargs = len(sys.argv)
-    repl = nargs == 1
-
-    if nargs == 2:
-        text = sys.argv[1]
-        value = calc(text)
-        print(value)
+    repl = len(sys.argv) == 1
+    if not repl:
+        cli(repl=repl)
 
     while repl:
 
@@ -30,6 +26,24 @@ def main():
 
         value = calc(text)
         print(value)
+
+
+def cli(repl):
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "operations",
+        help="Calculate operations, where operations is an string containing"
+        " a mathematical expression. "
+        "To include spaces on this expressions use single or double dashes"
+        ', \' or ", as in "1+1"',
+        type=str,
+    )
+    args = parser.parse_args()
+
+    value = calc(args.operations)
+    print(value)
+    exit()
 
 
 if __name__ == "__main__":
