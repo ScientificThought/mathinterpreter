@@ -43,7 +43,6 @@ def cli(repl):
 
     value = calc(args.operations)
     print(value)
-    exit()
 
 
 if __name__ == "__main__":
