@@ -28,7 +28,7 @@ def main():
                 break
             print_value(text)
         else:
-            print("Invalid input!")
+            print("Invalid syntax")
 
 
 def print_value(text):
