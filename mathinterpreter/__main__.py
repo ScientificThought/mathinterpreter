@@ -18,7 +18,7 @@ def main():
             print("\n", e.__doc__)
             exit()
         except EOFError:
-            print("EOFError")
+            print("\nEOFError")
             exit()
 
         expression = expression.strip()
