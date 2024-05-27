@@ -13,7 +13,7 @@ def main():
     while repl:
 
         try:
-            text = input("calc > ")
+            expression = input("calc > ")
         except KeyboardInterrupt as e:
             print("\n", e.__doc__)
             exit()
@@ -21,18 +21,18 @@ def main():
             print("EOFError")
             exit()
 
-        text = text.strip()
-        if text.isascii():
-            text = text.lower()
-            if text in ["q", "quit"]:
+        expression = expression.strip()
+        if expression.isascii():
+            expression = expression.lower()
+            if expression in ["q", "quit"]:
                 break
-            print_value(text)
+            print_value(expression)
         else:
             print("Invalid syntax")
 
 
-def print_value(text):
-    value = calc(text)
+def print_value(expression):
+    value = calc(expression)
     if value:
         print(value)
 
@@ -57,9 +57,9 @@ def cli(repl):
 
     if not repl:
         args = parser.parse_args()
-        text = "".join(args.expression)
+        expression = "".join(args.expression)
 
-        print_value(text)
+        print_value(expression)
 
 
 if __name__ == "__main__":
