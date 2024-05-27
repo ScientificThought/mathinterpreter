@@ -8,8 +8,7 @@ from mathinterpreter.calculate import calc
 def main():
 
     repl = len(sys.argv) == 1
-    if not repl:
-        cli(repl=repl)
+    cli(repl=repl)
 
     while repl:
 
@@ -30,19 +29,26 @@ def main():
 
 def cli(repl):
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="A simple math interpreter with a command line interface and an interactive mode.",
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
     parser.add_argument(
-        "operations",
-        help="Calculate operations, where operations is an string containing"
-        " a mathematical expression. "
-        "To include spaces on this expressions use single or double dashes"
-        ', \' or ", as in "1+1"',
-        type=str,
+        "expression",
+        nargs="*",
+        help="Evaluate expression, which must be in one of the following forms:\n"
+        "  1+1/2^4\n"
+        "  1 + 1 / 2^4\n"
+        "  1 + 1 / '(2^(4/2))'\n"
+        "Note that to properly include parenthesis on command line calls it is necessary to"
+        " use single or double dashes. Default: interactive mode.",
     )
     args = parser.parse_args()
+    text = "".join(args.expression)
 
-    value = calc(args.operations)
-    print(value)
+    if not repl:
+        value = calc(text)
+        print(value)
 
 
 if __name__ == "__main__":
