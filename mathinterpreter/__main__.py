@@ -24,10 +24,13 @@ def main():
             if text in ["q", "quit"]:
                 break
 
-        if text:
-            value = calc(text)
-            if value:
-                print(value)
+            print_value(text)
+
+
+def print_value(text):
+    value = calc(text)
+    if value:
+        print(value)
 
 
 def cli(repl):
@@ -47,12 +50,12 @@ def cli(repl):
         " use single or double quotes, ' or \", enclosing the expression.\n"
         "Default: interactive mode.",
     )
-    args = parser.parse_args()
-    text = "".join(args.expression)
 
     if not repl:
-        value = calc(text)
-        print(value)
+        args = parser.parse_args()
+        text = "".join(args.expression)
+
+        print_value(text)
 
 
 if __name__ == "__main__":
