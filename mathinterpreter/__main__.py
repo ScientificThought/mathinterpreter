@@ -16,9 +16,9 @@ def main():
             text = input("calc > ")
         except KeyboardInterrupt as e:
             print("\n", e.__doc__)
+            exit()
         except EOFError:
             print("EOFError")
-        finally:
             exit()
 
         text = text.strip()
