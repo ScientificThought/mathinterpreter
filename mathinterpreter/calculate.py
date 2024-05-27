@@ -28,3 +28,4 @@ def calc(text):
         return f"{value}"
     except Exception as e:
         print(e)
+        return None

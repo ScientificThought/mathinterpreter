@@ -18,13 +18,16 @@ def main():
             print("\n", KeyboardInterrupt.__doc__)
             exit()
 
+        text = text.strip()
         if text.isascii():
             text = text.lower()
             if text in ["q", "quit"]:
                 break
 
-        value = calc(text)
-        print(value)
+        if text:
+            value = calc(text)
+            if value:
+                print(value)
 
 
 def cli(repl):
