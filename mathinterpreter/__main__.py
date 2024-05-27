@@ -28,7 +28,7 @@ def main():
                 break
             print_value(expression)
         else:
-            print("Invalid syntax")
+            print("Invalid input. Non-ASCII character(s) were giving as input.")
 
 
 def print_value(expression):
