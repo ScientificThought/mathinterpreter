@@ -14,8 +14,11 @@ def main():
 
         try:
             text = input("calc > ")
-        except KeyboardInterrupt:
-            print("\n", KeyboardInterrupt.__doc__)
+        except KeyboardInterrupt as e:
+            print("\n", e.__doc__)
+        except EOFError:
+            print("EOFError")
+        finally:
             exit()
 
         text = text.strip()
@@ -23,8 +26,9 @@ def main():
             text = text.lower()
             if text in ["q", "quit"]:
                 break
-
             print_value(text)
+        else:
+            print("Invalid input!")
 
 
 def print_value(text):
