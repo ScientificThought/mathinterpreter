@@ -41,7 +41,8 @@ def cli(repl):
         "  1 + 1 / 2^4\n"
         "  1 + 1 / '(2^(4/2))'\n"
         "Note that to properly include parenthesis on command line calls it is necessary to"
-        " use single or double dashes. Default: interactive mode.",
+        " use single or double quotes, ' or \", enclosing the expression.\n"
+        "Default: interactive mode.",
     )
     args = parser.parse_args()
     text = "".join(args.expression)
