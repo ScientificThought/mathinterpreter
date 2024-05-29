@@ -7,30 +7,31 @@ from mathinterpreter.calculate import calc
 
 def main():
 
-    repl = len(sys.argv) == 1
-    cli(repl=repl)
+    if len(sys.argv) != 1:
+        cli()
+    else:
+        while True:
 
-    while repl:
-
-        try:
-            text = input("calc > ")
-        except KeyboardInterrupt:
-            print("\n", KeyboardInterrupt.__doc__)
-            exit()
-
-        text = text.strip()
-        if text.isascii():
-            text = text.lower()
-            if text in ["q", "quit"]:
+            try:
+                expression = input("calc > ")
+            except (KeyboardInterrupt, EOFError) as error:
+                print("\n", type(error).__name__)
                 break
+            else:
+                expression = expression.strip().lower()
+                if expression in ["q", "quit"]:
+                    break
 
-        if text:
-            value = calc(text)
-            if value:
-                print(value)
+                print_value(expression)
 
 
-def cli(repl):
+def print_value(expression):
+    value = calc(expression)
+    if value:
+        print(value)
+
+
+def cli():
 
     parser = argparse.ArgumentParser(
         description="A simple math interpreter with a command line interface and an interactive mode.",
@@ -47,12 +48,10 @@ def cli(repl):
         " use single or double quotes, ' or \", enclosing the expression.\n"
         "Default: interactive mode.",
     )
-    args = parser.parse_args()
-    text = "".join(args.expression)
 
-    if not repl:
-        value = calc(text)
-        print(value)
+    args = parser.parse_args()
+    expression = "".join(args.expression)
+    print_value(expression)
 
 
 if __name__ == "__main__":
