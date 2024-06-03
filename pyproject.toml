@@ -1,13 +1,16 @@
 [build-system]
-requires = ["setuptools >= 69.0"]
+requires = ["setuptools >= 69", "setuptools_scm>8"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "mathinterpreter"
-version = "0.1"
+dynamic = ["version"]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
 
 [project.optional-dependencies]
-dev = ["ipython", "pytest", "coverage", "black"]
+dev = ["pytest >= 8.0", "coverage >=7.0", "black >= 24.0"]
 
 [project.scripts]
 mathinterpreter = "mathinterpreter.__main__:main"
@@ -18,3 +21,5 @@ addopts = ["--import-mode=importlib"]
 [tool.black]
 line-length = 88
 target-version = ['py310', 'py311', 'py312']
+
+[tool.setuptools_scm]
