@@ -12,11 +12,15 @@ base: core22
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 
+adopt-info: mathinterpreter
 parts:
   mathinterpreter:
     plugin: python
     source-type: git
     source: https://github.com/ScientificThought/py-math-interpreter
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=10)
 
 apps:
   mathinterpreter:
