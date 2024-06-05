@@ -4,5 +4,9 @@ dist
 *.egg-info
 __pycache__
 
+# Snapcraft
 *.snap
+
+# Code coverage
 .coverage
+
