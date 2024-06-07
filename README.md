@@ -34,7 +34,9 @@ Alternatively you can also provide math expressions as parameters to `mathinterp
 ```
 $ mathinterpreter 1+1
 2.0
-$ mathinterpreter " 1 + 1"
+$ mathinterpreter "1 + 1"
+2.0
+$ 
 ```
 For more examples, use `mathinterpreter -h`. That's it.
 
