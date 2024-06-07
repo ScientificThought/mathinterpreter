@@ -1,22 +1,43 @@
 
 ![Static Badge](https://img.shields.io/badge/python-%3E%3D3.10-blue?style=flat&logo=python&logoColor=green&label=Python&color=green) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![Static Badge](https://img.shields.io/badge/unit_test-pytest-blue?style=flat&logo=pytest)
 
-# Python - Math Interpreter
+# mathinterpreter
+## **An interpreter for evaluating simple math expressions.**
 
-An interpreter, written from scratch in Python, that can evaluate simple math calculations, with a simple Read-Eval-Print-Loop (REPL) command line interface. This project is based on  [py-simple-math-interpreter](https://github.com/davidcallanan/py-simple-math-interpreter), by David Callanan and illustrates the use of software engineering techniques to evolve a prototype code into a professional software. 
+mathinterpreter evaluates simple math calculations through command line and console. This project is based on  [py-simple-math-interpreter](https://github.com/davidcallanan/py-simple-math-interpreter), by David Callanan, and illustrates the use of software engineering techniques to evolve a prototype code into a professional software.
 
 Since our objective is to create an education/professional example we didn't change the original business logic, *i.e.*, we do not change the interpretor code. Besides the four basic operations ( addition, subtraction, multiplication, and division) we implemented the power operator `^` to calculate `a^b` and the modulo operator `%`.
 
 ## How to install and run the REPL
-
 
 ### Using pipx (recommended)
 
 To use this project as a standalone command line tool install [pipx](https://pipx.pypa.io/stable/installation/) and run:
 
 ```bash
-pipx install git+https://github.com/ScientificThought/py-math-interpreter
+pipx install mathinterpreter
 ```
+At this point you can run the console from anywhere in your machine by typing `mathinterpreter` in your terminal console. 
+This will open the console terminal of the interpreter and you can now use it for evaluating math expressions:
+```
+$ mathinterpreter
+calc > 1+1        
+2.0
+calc > (3.0+2*2)/3
+2.3333333333333335
+calc > q
+$ 
+```
+Just type `q` or `quit` followed by enter in the console to return to your shell. 
+
+Alternatively you can also provide math expressions as parameters to `mathinterpreter`, as described below:
+```
+$ mathinterpreter 1+1
+2.0
+$ mathinterpreter " 1 + 1"
+```
+For more examples, use `mathinterpreter -h`. That's it.
+
 
 ### Install using pip
 
@@ -35,19 +56,11 @@ source env/bin/activate
 Note that `mynewproject` could be any name of your choice and that instead of using `source` you could simply use the `.` command. After activating your new environment, install the package from source using pip:
 
 ```bash
-python -m pip install git+https://github.com/ScientificThought/py-math-interpreter.git
+python -m pip install mathinterpreter
 ```
-At this point you can run the REPL, from the directory in which you installed the package by typing `mathinterpreter` in your terminal. This will open the REPL terminal of the interpreter and you can now use it for evaluating math expressions:
-```
-$ mathinterpreter
-calc > 1+1        
-2.0
-calc > (3.0+2*2)/3
-2.3333333333333335
-calc > q
-$ 
-```
-Just type `q` or `quit` followed by enter  in the REPL to return to your shell. That's it.
+Through this procedure you can run `mathinterpreter` inside the virtual environment you just created and import 
+`mathinterpreter` as a library to use in your project, as we discuss below.
+
 
 ### How to use this package as Python module
 
@@ -58,37 +71,8 @@ from mathinterpreter import calc
 value = calc('1 + 3*(5*2+1)/2')
 print(value)
 ```
-To using `mathinterpreter` as a library you will need to import the Lexer, the Parser, and the Interpreter classes. For understanding how the interpreter works we recommend you to look the files `mathinterpreter/__main__.py` and `mathinterpreter/calculate.py`, which implement the REPL.
-
-## What we have done and what we are doing
-
-### Current implementation includes:**
-
-*Version*: 2024.05.07
-- library `mathinterpreter` (Lexer, Parser, Interpreter, and a `calc()`, to simplify calculations);
-- a simple command line interface, `mathinterpreter`, using a simple REPL;
-
-
-### Project Software Stack
-
-- pip: for package installation frontend;
-- setuptools: for package installation backend;
-- pytest: for unit tests;
-- black: for automatic code formatting;
-- GitHub Action Scripts: for CI Automation;
-
-### Planned improvements
-We track feature requests with issues. But we aim to implement:
-
-- implement code coverage;
-- expand the tests suit;
-- improve the cli:
-    - use `argparse` to improve the cli usage, allowing the user to call `mathinterpreter "1+1"`, for example.    
-    - make the REPL more user friendly;
-
-## Contributing
-
-Please take a look on our [contributing guide](doc/guides/contributing.md).
+To using `mathinterpreter` as a library you will need to import the Lexer, the Parser, and the Interpreter classes. 
+For understanding how the interpreter works we recommend you to look the files `mathinterpreter/__main__.py` and `mathinterpreter/calculate.py`, which implement the Read-Eval-Print-Loop (REPL) console.
 
 ## Who we are?
 
@@ -97,3 +81,9 @@ involved with computation while doing PhD in Physics at University of São Paulo
 
 ScientificThoughts was created as an online place to develop interesting small projects to improving 
 our software engineering techniques. Want to join us? Just contact us.
+
+## Contributing
+
+This project was created to showcase how to improve a simple project using software engineering techniques. 
+If you have questions or want to collaborate with us in other related projects, contact us through, preferencially 
+through Linkedin. Our contacts can be found in our personal profiles.
