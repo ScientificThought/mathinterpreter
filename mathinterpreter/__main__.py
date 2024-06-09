@@ -2,6 +2,7 @@ import argparse
 import readline
 import sys
 
+from mathinterpreter import __version__
 from mathinterpreter.calculate import calc
 
 
@@ -48,10 +49,20 @@ def cli():
         " use single or double quotes, ' or \", enclosing the expression.\n"
         "Default: interactive mode.",
     )
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="store_true",
+        help="Print mathinterpreter version and exit.",
+    )
 
     args = parser.parse_args()
-    expression = "".join(args.expression)
-    print_value(expression)
+
+    if args.version:
+        print("mathinterpreter ", __version__)
+    elif args.expression:
+        expression = "".join(args.expression)
+        print_value(expression)
 
 
 if __name__ == "__main__":
