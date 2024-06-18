@@ -43,7 +43,7 @@ For more examples, use `mathinterpreter -h`. That's it.
 
 ### Install using pip
 
-If you want to install this package and use it as a library on another project you ccan use `pip` and a virtual environment manager.  There are many ways to do that but if you already know how to setup a virtual environment, probably you could proceed your way. 
+If you want to install this package and use it as a library on another project you can use `pip` and a virtual environment manager.  There are many ways to do that but if you already know how to setup a virtual environment, probably you could proceed your way. 
 
 In our development setup we use `venv`, which comes with python, on Ubuntu Linux. If you are new to software development, follow the steps we recommend below which is expect to work on any Linux Distribution.
 
