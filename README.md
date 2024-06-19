@@ -86,6 +86,4 @@ our software engineering techniques. Want to join us? Just contact us.
 
 ## Contributing
 
-This project was created to showcase how to improve a simple project using software engineering techniques. 
-If you have questions or want to collaborate with us in other related projects, contact us through, preferencially 
-through Linkedin. Our contacts can be found in our personal profiles.
+This project was created to showcase how to improve a simple project using software engineering techniques. If you have questions or want to collaborate with us in other related projects, contact us preferencially through Linkedin. Our contacts also can be found in our personal GitHub profiles.
